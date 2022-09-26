@@ -5,4 +5,7 @@
 
 <% @patients.each do |p| %>
 <p><%= p.name %><p>
+  <%= form_with url: patient_doctor_path(p.id), method: :delete, local: true do |f| %>
+    <%= f.submit 'remove' %>
   <% end %>
+<% end %>
